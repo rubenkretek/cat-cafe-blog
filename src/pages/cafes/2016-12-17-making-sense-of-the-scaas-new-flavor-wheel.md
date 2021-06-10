@@ -1,10 +1,18 @@
 ---
 templateKey: cafes-post
-title: Making sense of the SCAA’s new Flavor Wheel
+title: First cat cafe
+subtitle: This is the subtitle
+featuredimage: /img/img_20200728_161439.jpg
+images: /img/chemex.jpg
+description: This is the first review of a car cafe!!
+location: Eastbourne
+website: https://catcafe.co.uk/
+date-visited: 2021-03-09T21:16:49.219Z
+features:
+  - Wheelchair accessible
+  - Free entry
+featuredpost: true
 date: 2016-12-17T15:04:10.000Z
-featuredpost: false
-featuredimage: /img/flavor_wheel.jpg
-description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
 tags:
   - flavor
   - tasting
