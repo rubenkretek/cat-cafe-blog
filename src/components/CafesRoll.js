@@ -33,7 +33,7 @@ class CafesRoll extends React.Component {
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
                     >
-                      {post.frontmatter.title}
+                      {post.frontmatter.title}hello
                     </Link>
                     <span> &bull; </span>
                     <span className="subtitle is-size-5 is-block">
