@@ -62,7 +62,7 @@ collections:
           label: "Features",
           name: "features",
           widget: "select",
-          multiple: "true",
+          multiple: true,
           options: ["Wheelchair accessible", "Vegan friendly", "Free entry"],
         }
       - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
