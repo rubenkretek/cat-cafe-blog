@@ -10,6 +10,7 @@ export const CafesPostTemplate = ({
   content,
   contentComponent,
   description,
+  location,
   tags,
   title,
   helmet,
@@ -26,6 +27,7 @@ export const CafesPostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
+            <h2>{location}</h2>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -50,6 +52,7 @@ CafesPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  location: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
 }
@@ -63,6 +66,7 @@ const CafesPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        location={post.frontmatter.location}
         helmet={
           <Helmet titleTemplate="%s | Cafes">
             <title>{`${post.frontmatter.title}`}</title>
@@ -96,6 +100,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        location
         tags
       }
     }
