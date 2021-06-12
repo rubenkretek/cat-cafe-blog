@@ -13,6 +13,7 @@ export const CafesPostTemplate = ({
   location,
   tags,
   title,
+  subtitle,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
@@ -26,6 +27,7 @@ export const CafesPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
+            <h2>{subtitle}</h2>
             <p>{description}</p>
             <h2>{location}</h2>
             <PostContent content={content} />
@@ -54,6 +56,7 @@ CafesPostTemplate.propTypes = {
   description: PropTypes.string,
   location: PropTypes.string,
   title: PropTypes.string,
+  subtitle: PropTypes.string,
   helmet: PropTypes.object,
 }
 
@@ -78,6 +81,7 @@ const CafesPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        subtitle={post.frontmatter.subtitle}
       />
     </Layout>
   )
@@ -99,6 +103,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        subtitle
         description
         location
         tags
