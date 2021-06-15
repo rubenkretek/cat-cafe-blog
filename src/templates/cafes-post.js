@@ -31,7 +31,6 @@ export const CafesPostTemplate = ({
             <h2>{subtitle}</h2>
             <p>{description}</p>
             <h2>{location}</h2>
-            <p>{dateVisited}</p>
             <a href={website}>{website}</a>
             <PostContent content={content} />
             {tags && tags.length ? (
@@ -112,7 +111,6 @@ export const pageQuery = graphql`
         description
         location
         website
-        dateVisited(formatString: "MMMM DD, YYYY")
         tags
       }
     }
