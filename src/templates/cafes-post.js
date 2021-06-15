@@ -12,7 +12,9 @@ export const CafesPostTemplate = ({
   description,
   location,
   website,
+  dateVisited,
   tags,
+  features,
   title,
   subtitle,
   helmet,
@@ -31,6 +33,15 @@ export const CafesPostTemplate = ({
             <h2>{subtitle}</h2>
             <p>{description}</p>
             <h2>{location}</h2>
+            <p>{dateVisited}</p>
+            {features && features.length ? (
+              <ul>
+                {features.map((features) => (
+                  <li>{features}</li>
+                ))}
+              </ul>
+            ) : null}
+
             <a href={website}>{website}</a>
             <PostContent content={content} />
             {tags && tags.length ? (
@@ -61,6 +72,7 @@ CafesPostTemplate.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   helmet: PropTypes.object,
+  dateVisited: PropTypes.string,
 }
 
 const CafesPost = ({ data }) => {
@@ -84,8 +96,10 @@ const CafesPost = ({ data }) => {
           </Helmet>
         }
         tags={post.frontmatter.tags}
+        features={post.frontmatter.features}
         title={post.frontmatter.title}
         subtitle={post.frontmatter.subtitle}
+        dateVisited={post.frontmatter.dateVisited}
       />
     </Layout>
   )
@@ -111,7 +125,9 @@ export const pageQuery = graphql`
         description
         location
         website
+        dateVisited(formatString: "MMMM DD, YYYY")
         tags
+        features
       }
     }
   }

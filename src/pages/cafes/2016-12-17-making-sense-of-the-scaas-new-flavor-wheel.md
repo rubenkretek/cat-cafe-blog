@@ -7,7 +7,7 @@ images: /img/chemex.jpg
 description: This is the first review of a car cafe!!
 location: Eastbourne
 website: https://catcafe.co.uk/
-date-visited: 2021-03-09T21:16:49.219Z
+dateVisited: 2021-03-09T21:16:49.219Z
 features:
   - Wheelchair accessible
   - Free entry
