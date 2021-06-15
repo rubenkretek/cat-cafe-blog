@@ -52,7 +52,6 @@ collections:
           widget: image,
           allow_multiple: false,
         }
-      - { label: "Images", name: "images", widget: image }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Location", name: "location", widget: "string" }

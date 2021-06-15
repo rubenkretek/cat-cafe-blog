@@ -11,6 +11,7 @@ export const CafesPostTemplate = ({
   contentComponent,
   description,
   location,
+  website,
   tags,
   title,
   subtitle,
@@ -30,6 +31,8 @@ export const CafesPostTemplate = ({
             <h2>{subtitle}</h2>
             <p>{description}</p>
             <h2>{location}</h2>
+            <p>{dateVisited}</p>
+            <a href={website}>{website}</a>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -55,6 +58,7 @@ CafesPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   location: PropTypes.string,
+  website: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
   helmet: PropTypes.object,
@@ -70,6 +74,7 @@ const CafesPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         location={post.frontmatter.location}
+        website={post.frontmatter.website}
         helmet={
           <Helmet titleTemplate="%s | Cafes">
             <title>{`${post.frontmatter.title}`}</title>
@@ -106,6 +111,8 @@ export const pageQuery = graphql`
         subtitle
         description
         location
+        website
+        dateVisited(formatString: "MMMM DD, YYYY")
         tags
       }
     }
